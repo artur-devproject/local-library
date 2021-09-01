@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    div.panel-heading
+        h1.panel-title= title
+
+    div.panel-body
+        ul
+            each author in author_list
+                li 
+                    a(href=author.url) #{author.name}
+                    |   (#{author.birth_date} - #{author.death_date})
+
+            else
+                li There are no authors
+        
